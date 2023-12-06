@@ -1,0 +1,35 @@
+Suppose you have two entirely separate java project / microservce (must build using maven)  
+
+you want to use that one java project files (codes) in another java project
+then follow this steps 
+
+In Java, you can use classes from one project in another project by following these general steps:
+
+1. **Create a Java Project:**
+   First, make sure that you have a separate Java project containing the classes you want to reuse.
+
+2. **Build the Project:**
+   Build the project to generate the compiled bytecode (`.class` files). This step might vary depending on the development environment you are using. For example, in many Integrated Development Environments (IDEs) like Eclipse or IntelliJ IDEA, you can build the project by clicking on a "Build" or "Compile" option.
+
+3. **Export the JAR File:**
+   Once your project is built, you need to create a JAR (Java Archive) file that contains the compiled classes. This file acts as a package for your classes, making it easy to share them with other projects.
+
+   - In Eclipse: Right-click on the project, choose "Export," then select "JAR file."
+   - In IntelliJ IDEA: Right-click on the project, choose "Open Module Settings," go to "Artifacts," and create a JAR artifact.
+
+4. **Add the JAR to Another Project:**
+   Now, in your target project where you want to use these classes:
+
+   - In Eclipse: Right-click on the project, choose "Build Path" > "Configure Build Path." Go to the "Libraries" tab, click "Add External JARs," and select the JAR file you exported.
+   - In IntelliJ IDEA: Right-click on the project, choose "Open Module Settings," go to "Libraries," click the "+" button, and add the JAR file.
+
+5. **Import and Use the Classes:**
+   In the Java files of your new project, you can import and use the classes from the JAR file by adding the appropriate import statements at the beginning of your code.
+
+   ```java
+   import com.example.MyClass; // Replace with the actual package and class name
+   ```
+
+   Now, you should be able to use the classes from the external project in your new project.
+
+Remember to manage dependencies and versioning appropriately, and ensure that the JAR file you're using is compatible with your project's Java version. If the external project is under active development, you may also want to consider using build tools like Maven or Gradle for better dependency management.
